@@ -3,7 +3,7 @@ require 'pry'
 class Artist
   extend Memorable    # responsible for defining the method as a class method vs instance (include)
   # extend Findable::ClassMethod
-
+  include Paramable
   
   attr_accessor :name
   attr_reader :songs
