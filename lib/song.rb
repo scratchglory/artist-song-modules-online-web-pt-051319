@@ -2,7 +2,7 @@ require 'pry'
 
 class Song
   extend Memorable    # responsible for defining the method as a class method vs instance (include)
-  extend Findable::InstanceMethod
+  # extend Findable::InstanceMethod
   include Paramable
   
   attr_accessor :name
