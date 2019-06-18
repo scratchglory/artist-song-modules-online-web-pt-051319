@@ -2,7 +2,7 @@ require 'pry'
 
 class Artist
   extend Memorable    # responsible for defining the method as a class method vs instance (include)
-  extend Findable::ClassMethod
+  # extend Findable::ClassMethod
   include Paramable
   
   attr_accessor :name
@@ -15,21 +15,14 @@ class Artist
     @songs = []
   end
 
-  # def self.find_by_name(name)
-  #   @@artists.detect{|a| a.name == name}
-  # end
+  def self.find_by_name(name)
+    @@artists.detect{|artist| artist.name == name}
+  end
 
   def self.all
     @@artists
   end
 
-  # def self.reset_all
-  #   self.all.clear
-  # end
-
-  # def self.count
-  #   self.all.count
-  # end
 
   def add_song(song)
     @songs << song
@@ -40,7 +33,4 @@ class Artist
     songs.each { |song| add_song(song) }
   end
 
-  # def to_param
-  #   name.downcase.gsub(' ', '-')
-  # end
 end
