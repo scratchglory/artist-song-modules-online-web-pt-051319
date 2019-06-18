@@ -2,7 +2,7 @@ require 'pry'
 
 class Song
   extend Memorable    # responsible for defining the method as a class method vs instance (include)
-  # include Paramable
+  
   attr_accessor :name
   attr_reader :artist
 
